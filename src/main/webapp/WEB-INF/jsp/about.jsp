@@ -66,40 +66,19 @@
                             <li class="has-children">
                                 <a class="nav-link">Home</a>
                                 <ul class="dropdown">
-                                    <li><a href="index.html" class="nav-link">Home - 1</a></li>
-                                    <li><a href="index_2.html" class="nav-link">Home - 2</a></li>
-                                    <li><a href="index_3.html" class="nav-link">Home - 3</a></li>
+                                    <li><a href="${contextPath}/" class="nav-link">Home</a></li>
                                 </ul>
                             <li class="has-children">
                                 <a class="nav-link active">About</a>
                                 <ul class="dropdown">
-                                    <li><a href="about.html" class="nav-link">About - 1</a></li>
-                                    <li><a href="about_2.html" class="nav-link">About - 2</a></li>
+                                    <li><a href="${contextPath}/about" class="nav-link">About Us</a></li>
                                 </ul>
                             </li>
-                            <li class="has-children">
-                                <a class="nav-link">Yachts</a>
-                                <ul class="dropdown">
-                                    <li><a href="yachts.html" class="nav-link">All Yachts</a></li>
-                                    <li><a href="yachts_category.html" class="nav-link">Motor Yachts</a></li>
-                                    <li><a href="yachts_category.html" class="nav-link">Fishing Boats</a></li>
-                                    <li><a href="yachts_category.html" class="nav-link">Sailing Yachts</a></li>
-                                    <li><a href="yachts_category.html" class="nav-link">Groups Yachts</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="activities.html" class="nav-link">Activities</a></li>
-            
-                            <li><a href="management.html" class="nav-link">Management</a></li>
-                            <li><a href="contact.html" class="nav-link">Contact</a></li>
-                            <li class="has-children">
-                                <a class="nav-link">Version</a>
-                                <ul class="dropdown">
-                                    <li><a href="../light/index.html" class="nav-link">Light</a></li>
-                                    <li><a href="../dark/index.html" class="nav-link">Dark</a></li>
-                                    <li><a href="../lite/index.html" class="nav-link">Light - Simple</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                      <li><a href="${contextPath}/services" class="nav-link">Services</a></li>
+                     <li><a href="${contextPath}/contact" class="nav-link">Contact</a></li>
+                       </ul>
+                      </li>
+                  </ul>
                 </nav>
             </div>
   

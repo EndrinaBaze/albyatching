@@ -11,8 +11,20 @@ import java.io.UnsupportedEncodingException;
 
 @Controller
 public class HomeController {
-    @GetMapping(value = {"/about"})
+    @GetMapping(value = {"/"})
     public String homePage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "index";
+    }
+    @GetMapping(value = {"/about"})
+    public String aboutPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "about";
+    }
+    @GetMapping(value = {"/services"})
+    public String activitiesPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "activities";
+    }
+    @GetMapping(value = {"/contact"})
+    public String contactPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "contact";
     }
 }
