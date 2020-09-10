@@ -1,14 +1,23 @@
 package com.albanianyachting.sql;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
+//@NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Proxy(lazy = false)
 public class Users implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
     @Column(name = "name", nullable = false)
     private String name;
@@ -20,8 +29,8 @@ public class Users implements Serializable {
     private String username;
     @Column(name = "password", nullable = false)
     private String password;
-    @ManyToOne
-    @Column(name = "role_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     public Users() {
