@@ -20,10 +20,7 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
     @PostMapping("/role")
-    public RoleDTO createRole(@RequestBody RoleDTO roleDTO) {
-
-        return roleService.createRole(roleDTO);
-    }
+    public RoleDTO createRole(@RequestBody RoleDTO roleDTO) { return roleService.createRole(roleDTO); }
     @PutMapping("/role")
     public RoleDTO updateRole(@RequestBody RoleDTO roleDTO) {
         return roleService.updateRole(roleDTO);

@@ -27,4 +27,12 @@ public class HomeController {
     public String contactPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "contact";
     }
+    @GetMapping(value = {"/login"})
+    public String loginPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "login";
+    }
+    @GetMapping(value = {"/controlpanel"})
+    public String controlpanelPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "controlpanel";
+    }
 }

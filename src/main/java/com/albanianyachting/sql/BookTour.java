@@ -2,7 +2,6 @@ package com.albanianyachting.sql;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Proxy;
-import sun.util.calendar.BaseCalendar;
 
 import javax.persistence.*;
 import java.io.Serializable;
