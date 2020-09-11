@@ -6,8 +6,10 @@ import com.albanianyachting.services.ToursService;
 import com.albanianyachting.sql.Repository.ToursRepository;
 import com.albanianyachting.sql.Tours;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -27,8 +29,14 @@ public class ToursController {
     public ToursDTO updateTours(@RequestBody ToursDTO toursDTO){ return  this.toursService.updateTour(toursDTO);}
 
     @GetMapping("/tours")
-    public List<ToursDTO> getTours(){ return this.toursService.findTours();}
+    public List<ToursDTO> getTours(){
+        return this.toursService.findTours();}
 
+//    @GetMapping("/tours")
+//    public String tourlist(ModelMap model, HttpServletRequest request) {
+//        model.addAttribute("listTours", this.toursService.findTours());
+//        return "tours";
+//    }
     @DeleteMapping("/tours/{id}")
     public ToursDTO deleteTour(@PathVariable Long id) {
         final Tours tours = toursRepository.findOne(id);
