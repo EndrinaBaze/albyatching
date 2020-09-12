@@ -21,14 +21,14 @@
                     <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold">Endrina Baze</span>
-                        <span class="text-muted text-xs block">Administrator<b class="caret"></b></span>
+                        <span class="text-muted text-xs block">Admin<b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a class="dropdown-item" href="profile.html">Profile</a></li>
                         <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
                         <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        <li><a class="dropdown-item" href="login">Logout</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -36,25 +36,25 @@
                 </div>
             </li>
             <li class="active">
-                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li>
-                <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Arrival Formalities</span></a>
+                <a href="arrivalformalities"><i class="fa fa-diamond"></i> <span class="nav-label">Arrival Formalities</span></a>
             </li>
             <li>
-                <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Book A Tour</span></a>
+                <a href="booktour"><i class="fa fa-diamond"></i> <span class="nav-label">Book A Tour</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Bunker Quote</span></a>
+                <a href="bunkerquote"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Bunker Quote</span></a>
             </li>
             <li>
-                <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Tours </span></a>
+                <a href="tours"><i class="fa fa-envelope"></i> <span class="nav-label">Tours </span></a>
             </li>
             <li>
-                <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Provisioning</span>  </a>
+                <a href="provisioning"><i class="fa fa-pie-chart"></i> <span class="nav-label">Provisioning</span>  </a>
             </li>
             <li>
-                <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Agents</span></a>
+                <a href="agents"><i class="fa fa-flask"></i> <span class="nav-label">Agents</span></a>
             </li>
 
         </ul>

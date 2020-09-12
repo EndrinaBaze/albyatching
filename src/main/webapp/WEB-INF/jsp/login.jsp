@@ -7,6 +7,13 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath }" /><!DOCTYPE html>
 <html>
 <head>
+        <style>
+            body {
+                background-image: url("${contextPath}/resources/images/test.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -17,12 +24,12 @@
 </head>
 <body class="gray-bg">
 <div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
+    <div style="margin-top: 30%">
         <div>
             <h1 class="logo-name"></h1>
         </div>
-        <h3>Welcome</h3>
-        <p>Login in. To see it in action</p>
+        <h3 style="color: mintcream">Welcome</h3>
+        <p style="color: mintcream">Login in. To see it in action</p>
         <form:form class="m-t"  action="${contextPath}/signin">
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="Username" required="">
@@ -30,10 +37,8 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" required="">
             </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-            <a href="#"><small>Forget Password</small></a>
-            <p class="text-muted text-center"><small>Do not have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+            <button type="submit" class="btn btn-success block full-width m-b">Login</button>
+            <a style="color: #0e9aef" href="#"><small>Forget Password</small></a>
         </form:form>
         <p class="m-t"> <small></small> </p>
     </div>

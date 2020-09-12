@@ -1,6 +1,6 @@
 package com.albanianyachting.controllers;
 
-import com.albanianyachting.services.ToursService;
+import com.albanianyachting.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +15,17 @@ import java.io.UnsupportedEncodingException;
 public class HomeController {
     @Autowired
     private ToursService toursService;
+    @Autowired
+    private ProvisioningService provisioningService;
+    @Autowired
+    private BookTourService bookTourService;
+    @Autowired
+    private BunkerQuoteService bunkerQuoteService;
+    @Autowired
+    private ArrivalFormalitiesService arrivalFormalitiesService;
+    @Autowired
+    private UsersService usersService;
+
     @GetMapping(value = {"/"})
     public String homePage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "index";
@@ -43,5 +54,30 @@ public class HomeController {
     public String toursPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         model.addAttribute("listTours", this.toursService.findTours());
         return "tours";
+    }
+    @GetMapping(value = {"/provisioning"})
+    public String provisioningPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listProvisioning", this.provisioningService.findProvisionings());
+        return "provisioning";
+    }
+    @GetMapping(value = {"/booktour"})
+    public String bookTourPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listBookTour", this.bookTourService.findBookTour());
+        return "booktour";
+    }
+    @GetMapping(value = {"/bunkerquote"})
+    public String bunkerQuotePage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listBunkerQuote", this.bunkerQuoteService.findBunkerQuote());
+        return "bunkerquote";
+    }
+    @GetMapping(value = {"/arrivalformalities"})
+    public String arrivalFormalitiesPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listArrivalFormalities", this.arrivalFormalitiesService.findArrivalFormalities());
+        return "arrivalformalities";
+    }
+    @GetMapping(value = {"/users"})
+    public String agentsPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listAgents", this.usersService.findUsers());
+        return "users";
     }
 }

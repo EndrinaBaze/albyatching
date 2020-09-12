@@ -8,10 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<%--include header--%>
+    <%--include header--%>
     <%@ include file="./headerCP.jsp" %>
-
 </head>
 
 <body>
@@ -19,10 +17,10 @@
 <div id="wrapper">
     <%@ include file="./menu.jsp" %>
     <div id="page-wrapper" class="gray-bg">
-            <%@ include file="./header2CP.jsp" %>
+        <%@ include file="./header2CP.jsp" %>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2> Tours</h2>
+                <h2> Albania Yachting Agents</h2>
             </div>
             <div class="col-lg-2">
 
@@ -34,7 +32,7 @@
                     <div class="ibox ">
                         <div class="ibox-title text-right">
                             <form:form action="">
-                                <button type="submit" class="btn btn-w-m btn-success">Add New Tour</button>
+                                <button type="submit" class="btn btn-w-m btn-success">Add New Agent</button>
                             </form:form>
                         </div>
                     </div>
@@ -44,7 +42,7 @@
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title">
-                            <h5>Tours Table</h5>
+                            <h5>Agents Table</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -70,45 +68,57 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tours Type</th>
+                                        <th>Name</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                        <th>Position</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${listTours}" var="tours">
-                                    <tr class="gradeC">
-                                        <td>${tours.id}</td>
-                                        <td>${tours.tourType}</td>
-                                        <td style="width: 5%;">
-                                        <table>
-                                            <tr>
-                                                <td>
+                                    <c:forEach items="${listAgents}" var="agents">
+                                        <tr class="gradeC">
+                                            <td>${agents.id}</td>
+                                            <td>${agents.name}</td>
+                                            <td>${agents.lastname}</td>
+                                            <td>${agents.email}</td>
+                                            <td>${agents.username}</td>
+                                            <td>${agents.role.role}</td>
+                                            <td style="width: 5%;">
+                                                <table>
+                                                    <tr>
+                                                        <td>
 
-                                                    <small>
-                                                            <button class="btn btn-warning  dim " type="submit"  data-toggle="tooltip" data-placement="top" title="Edit"/><i>Edit</i> </button>
-                                                    </small>
-                                                </td>
-                                                <td>
-                                                    <small>
-                                                            <button class="btn btn-danger  dim" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"/><i>Delete</i></button>
-                                                    </small>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td></td>
-                                    </tr>
+                                                            <small>
+                                                                <button class="btn btn-warning  dim " type="submit"  data-toggle="tooltip" data-placement="top" title="Edit"/><i>Edit</i> </button>
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                <button class="btn btn-danger  dim" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"/><i>Delete</i></button>
+                                                            </small>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td></td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                     <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tours Type</th>
+                                        <th>Name</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                        <th>Position</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>
                                 </table>
                             </div>
-                            <%--include header--%>
+                            <%--include footer--%>
                             <%@ include file="./footerCP.jsp" %>
                         </div>
                     </div>
@@ -168,3 +178,4 @@
 </body>
 
 </html>
+listAgents
