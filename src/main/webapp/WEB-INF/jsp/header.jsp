@@ -54,7 +54,7 @@
 
             <div class="col-6 col-lg-2">
               <a href="/" class="company-logo">
-                  <li> <img src="${contextPath}/resources/images/logo2.png"> </li>
+                  <li> <img src="${contextPath}/resources/images/logo.png"> </li>
               </a>
             </div>
 
