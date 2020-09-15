@@ -19,8 +19,10 @@ public class RoleController {
     private RoleRepository roleRepository;
     @Autowired
     private RoleService roleService;
+
     @PostMapping("/role")
     public RoleDTO createRole(@RequestBody RoleDTO roleDTO) { return roleService.createRole(roleDTO); }
+
     @PutMapping("/role")
     public RoleDTO updateRole(@RequestBody RoleDTO roleDTO) {
         return roleService.updateRole(roleDTO);
