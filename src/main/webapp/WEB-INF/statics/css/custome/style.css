@@ -21,7 +21,7 @@
 2.8 - TESTIMONIAL
 2.9 - UPDATES
 
-  3 - ABOOUT US PAGE
+  3 - ABOUT US PAGE
 3.1 - HERO ABOUT
 3.2 - ABOUT IMAGE AND TEXT
 3.3 - COUNTS
@@ -361,7 +361,7 @@ input:-ms-input-placeholder {
   }
   
   .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a {
-    color: #333333 !important;
+    color: #33333 !important;
   }
   
   .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover,

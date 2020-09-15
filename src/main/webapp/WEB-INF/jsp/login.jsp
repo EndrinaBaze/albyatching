@@ -24,7 +24,7 @@
 </head>
 <body class="gray-bg">
 <div class="middle-box text-center loginscreen animated fadeInDown">
-    <div style="margin-top: 30%">
+    <div style="margin-top: 50%">
         <div>
             <h1 class="logo-name"></h1>
         </div>
