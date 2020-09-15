@@ -36,7 +36,7 @@ public class HomeController {
     }
     @GetMapping(value = {"/services"})
     public String activitiesPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        return "activities";
+        return "services";
     }
     @GetMapping(value = {"/contact"})
     public String contactPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {

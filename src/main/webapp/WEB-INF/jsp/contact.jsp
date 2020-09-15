@@ -7,92 +7,8 @@
 <!DOCTYPE html>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" /><html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moric-Yacht Booking HTML5 Template</title>
+<%@ include file="./header.jsp" %>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/bootstrap/bootstrap-grid.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/bootstrap/bootstrap-reboot.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="${contextPath}/resources/images/favicon.ico" />
-
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custome CSS -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/custome/style.css">
-
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/custome/responsive.css">
-
-</head>
-
-<body>
-
-    <!-- Nav Bar Starts here -->
-    <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icofont-close fas fa-times js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div>
-  
-      <header class="site-navbar js-sticky-header site-navbar-target">
-  
-        <div class="container">
-          <div class="row align-items-center">
-  
-            <div class="col-6 col-lg-2">
-              <a href="#" class="company-logo">
-                  <img src="${contextPath}/resources/images/company_logo.png" alt="">
-              </a>
-            </div>
-  
-            <div class="col-12 col-md-10 d-none d-lg-block">
-                <nav class="site-navigation position-relative text-right">
-                        <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li class="has-children">
-                                <a class="nav-link">Home</a>
-                                <ul class="dropdown">
-                                    <li><a href="${contextPath}/" class="nav-link">Home </a></li>
-                                </ul>
-                            <li class="has-children">
-                                <a class="nav-link">About</a>
-                                <ul class="dropdown">
-                                    <li><a href="${contextPath}/about" class="nav-link">About Us</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="${contextPath}/services" class="nav-link">Services</a></li>
-                            <li><a href="${contextPath}/contact" class="nav-link active">Contact</a></li>
-
-                        </ul>
-                </nav>
-            </div>
-  
-  
-            <div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
-  
-              <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse"
-                data-target="#main-navbar">
-                <span></span>
-              </a>
-            </div>
-  
-          </div>
-        </div>
-  
-      </header>
-    <!-- Nav Bar Ends here -->
 
     <!-- Hero image starts here -->
     <section class="hero-contact">
@@ -239,75 +155,8 @@
     <!-- Locations -->
 
     <!-- Address Section ends here -->
+<%@ include file="./footer.jsp" %>
 
-    <!-- Footer starts here -->
-    <section id="footer-sec">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-col">
-                            <h5>Activities</h5>
-                            <ul>
-                                <li><a href="${contextPath}/activities">Luxury Cruising</a></li>
-                                <li><a href="${contextPath}/activities">Dolphin Watching</a></li>
-                                <li><a href="${contextPath}/activities">Fishing</a></li>
-                                <li><a href="${contextPath}/activities">Stag / Hen Parties</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-col">
-                            <div class="footer-contact">
-                                <h5>Contact Us</h5>
-                                <ul>
-                                    <li><i class="fas fa-map-marker-alt mt-2"></i>
-                                        <p>2079 Settlers Lane, lorem ipsum - 56478354</p>
-                                    </li>
-                                    <li><i class="fas fa-envelope mt-1"></i>
-                                        <p>email@example.com</p>
-                                    </li>
-                                    <li><i class="fas fa-phone mt-1"></i>
-                                        <p>+54 192 45 78 621 / 622 / 623</p>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="footer-social mt-4">
-                                <h6>We are social</h6>
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-col">
-                            <div class="footer-partner">
-                                <h5>Business Partner</h5>
-                                <figure><img src="${contextPath}/resources/images/partner_logo_1.jpg" alt=""></figure>
-                                <p>Our huge list of partner market is lorem ipsum dolor sit consectetur amet, adipisicing elit. Suscipit, incidunt vero quod numquam tempore quia ipsa.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid footer-copy">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <p>Copyright © 2020 Moric. All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </section>
-    <!-- Footer ends here -->
 
     <!-- Bootstrap JavaScript -->
 
