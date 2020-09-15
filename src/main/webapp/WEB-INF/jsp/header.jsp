@@ -54,15 +54,15 @@
 
             <div class="col-6 col-lg-2">
               <a href="#" class="company-logo">
-                  <li> <img src="${contextPath}/resources/images/logo.png"> </li>
+                  <li> <img src="${contextPath}/resources/images/logo2.png"> </li>
               </a>
             </div>
 
             <div class="col-12 col-md-10 d-none d-lg-block">
                 <nav class="site-navigation position-relative text-right">
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li><a href="${contextPath}/contact" class="nav-link">Home</a></li>
-                            <li><a href="${contextPath}/contact" class="nav-link">About Us</a></li>
+                            <li><a href="/" class="nav-link">Home</a></li>
+                            <li><a href="/" class="nav-link">About Us</a></li>
                             <li class="has-children">
                                 <a href="/" class="nav-link">Services</a>
                                 <ul class="dropdown">
