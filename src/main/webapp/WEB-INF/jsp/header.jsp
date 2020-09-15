@@ -27,7 +27,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="${contextPath}/resources/css/custome/responsive.css">
 
-    <!-- owl carousle css -->
+    <!-- owl carousel css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/owl-carousel/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="${contextPath}/resources/css/owl-carousel/owl.theme.default.min.css" type="text/css">
 
@@ -53,7 +53,7 @@
           <div class="row align-items-center">
 
             <div class="col-6 col-lg-2">
-              <a href="#" class="company-logo">
+              <a href="/" class="company-logo">
                   <li> <img src="${contextPath}/resources/images/logo2.png"> </li>
               </a>
             </div>
@@ -62,11 +62,11 @@
                 <nav class="site-navigation position-relative text-right">
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li><a href="/" class="nav-link">Home</a></li>
-                            <li><a href="/" class="nav-link">About Us</a></li>
+                            <li><a href="#" class="nav-link">About Us</a></li>
                             <li class="has-children">
-                                <a href="/" class="nav-link">Services</a>
+                                <a href="#" class="nav-link">Services</a>
                                 <ul class="dropdown">
-                                    <li> <a href="/" class="nav-link">Yacht </a> </li>
+                                    <li> <a href="#" class="nav-link">Yacht </a> </li>
                                 </ul>
                             </li>
                             <li><a href="${contextPath}/contact" class="nav-link">Contact</a></li>
