@@ -31,36 +31,42 @@
 
                                                    <div class="col-md-6">
                                                        <div class="form-group">
-                                                           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="From date">
+                                                           <p> From date</p>
+                                                           <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" value="" required>
                                                        </div>
                                                    </div>
 
                                                    <div class="col-md-6">
                                                        <div class="form-group">
-                                                           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Till date">
+                                                           <p> Till date</p>
+                                                           <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" required>
                                                        </div>
                                                    </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <p> First Name </p>
                                                             <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <p> Last name</p>
                                                             <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" id="firstName" placeholder="Contact" value="" required>
+                                                            <p> Contact </p>
+                                                            <input type="text" class="form-control" id="firstName" placeholder="Phone Number" value="" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com">
+                                                            <p>Email Address</p>
+                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com" required>
                                                         </div>
                                                     </div>
 
@@ -80,7 +86,8 @@
 
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <textarea class="form-control" placeholder="Type your message here..." spellcheck="false"></textarea>
+                                                            <p> Leave a message </p>
+                                                            <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>
                                                         </div>
                                                     </div>
 

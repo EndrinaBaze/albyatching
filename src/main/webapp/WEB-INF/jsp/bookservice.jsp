@@ -70,15 +70,16 @@
 
                               <div class="col-md-6 m-auto">
                                 <div class="form-group text-center">
-                                <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                    <option>Select Service</option>
-                                    <option>Arrival Formalities</option>
-                                    <option>Provisioning</option>
-                                    <option>VIP Tours</option>
-                                    <option>Duty Free Bunkering</option>
+                                <select name= "URL" class="form-control custom-select" id="exampleFormControlSelect1" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
+                                    <option value="#">Select Service</option>
+                                    <option value="about">Arrival Formalities</option>
+                                    <option value="provisioningform">Provisioning</option>
+                                    <option value="viptoursform">VIP Tours</option>
+                                    <option value="bunkeringform">Duty Free Bunkering</option>
                                 </select>
                             </div>
                         </div>
+
 
 <%--                            <div class="col-md-12">--%>
 <%--                                <div class="form-group">--%>
