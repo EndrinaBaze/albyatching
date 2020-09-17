@@ -101,6 +101,16 @@ public class HomeController {
         model.addAttribute("listAgents", this.usersService.findUsers());
         return "users";
     }
+    @GetMapping(value = {"/bookservice"})
+    @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
+    public String bookservicePage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "bookservice";
+    }
+    @GetMapping(value = {"/arrivalformalitiesForm"})
+    @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
+    public String arrivalformalitiesFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "arrivalformalitiesform";
+    }
     @GetMapping(value = {"/servicesCP"})
     public String getServices(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         model.addAttribute("listServices", this.servicesService.findServices());
