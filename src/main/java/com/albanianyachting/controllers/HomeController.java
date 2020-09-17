@@ -1,13 +1,17 @@
 package com.albanianyachting.controllers;
 
+import com.albanianyachting.dto.ServicesDTO;
 import com.albanianyachting.services.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +32,8 @@ public class HomeController {
     private ArrivalFormalitiesService arrivalFormalitiesService;
     @Autowired
     private UsersService usersService;
+    @Autowired
+    private ServicesService servicesService;
 
     @GetMapping(value = {"/"})
     @ApiOperation(value = "Return home page", notes = "Retrieving the collection of home page operations")
@@ -39,7 +45,7 @@ public class HomeController {
     public String aboutPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "about";
     }
-    @GetMapping(value = {"/services"})
+    @GetMapping(value = {"/servicesC"})
     @ApiOperation(value = "Return services page", notes = "Retrieving the collection of services page operations")
     public String activitiesPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "services";
@@ -94,5 +100,33 @@ public class HomeController {
     public String agentsPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         model.addAttribute("listAgents", this.usersService.findUsers());
         return "users";
+    }
+    @GetMapping(value = {"/servicesCP"})
+    public String getServices(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listServices", this.servicesService.findServices());
+        return "servicesCP";
+    }
+    @GetMapping(value = {"/manageService"})
+    public String manageServices(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listServices", this.servicesService.findServices());
+        model.addAttribute("serviceDTO", new ServicesDTO());
+        return "manageService";
+    }
+//    @PostMapping ("/newService")
+    @RequestMapping(value = "/newService", method = RequestMethod.POST)
+    public String newService(ModelMap model, HttpServletRequest request) {
+//        model.addAttribute("listService", this.servicesService.findServices());
+//        model.addAttribute("serviceDTO", new ServicesDTO());
+        return "manageService";
+    }
+    @RequestMapping(value = "/insertService", method = RequestMethod.POST, params = {"saveService"})
+    public String insertService(Model model, RedirectAttributes redirect, @Validated ServicesDTO servicesDTO, BindingResult result, HttpServletRequest request) {
+        servicesDTO = this.servicesService.createServices(servicesDTO);
+        if (servicesDTO!= null) {
+            return "redirect:/servicesCP";
+        } else {
+            model.addAttribute("servicesDTO", servicesDTO);
+            return "manageService";
+        }
     }
 }

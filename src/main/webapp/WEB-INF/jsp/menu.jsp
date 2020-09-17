@@ -39,6 +39,9 @@
                 <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li>
+                <a href="servicesCP"><i class="fa fa-diamond"></i> <span class="nav-label">Services</span></a>
+            </li>
+            <li>
                 <a href="arrivalformalities"><i class="fa fa-diamond"></i> <span class="nav-label">Arrival Formalities</span></a>
             </li>
             <li>

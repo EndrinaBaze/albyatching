@@ -5,12 +5,18 @@ import com.albanianyachting.dto.mapper.ServicesMapper;
 import com.albanianyachting.services.ServicesService;
 import com.albanianyachting.sql.Repository.ServicesRepository;
 import com.albanianyachting.sql.Services;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class ServicesController {
     @Autowired
@@ -38,4 +44,10 @@ public class ServicesController {
         }
         return this.mapper.toDto(services);
     }
+
+//    @GetMapping(value = {"/servicesCP"})
+//    public String getServices(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+//        model.addAttribute("listServices", this.servicesService.findServices());
+//        return "servicesCP";
+//    }
 }

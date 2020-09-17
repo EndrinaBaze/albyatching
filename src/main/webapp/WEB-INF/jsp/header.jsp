@@ -62,14 +62,14 @@
                 <nav class="site-navigation position-relative text-right">
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li><a href="/" class="nav-link">Home</a></li>
-                            <li><a href="#" class="nav-link">About Us</a></li>
+                            <li><a href="about" class="nav-link">About Us</a></li>
                             <li class="has-children">
-                                <a href="#" class="nav-link">Services</a>
+                                <a href="services" class="nav-link">Services</a>
                                 <ul class="dropdown">
                                     <li> <a href="#" class="nav-link">Yacht </a> </li>
                                 </ul>
                             </li>
-                            <li><a href="${contextPath}/contact" class="nav-link">Contact</a></li>
+                            <li><a href="contact" class="nav-link">Contact</a></li>
                         </ul>
                 </nav>
             </div>
