@@ -1,3 +1,12 @@
+<html>
+<%@ include file="./header.jsp" %>
+
+
+<br>
+<br>
+<br>
+<br>
+
 <!-- Booking form starts here -->
 <section>
     <div class="container">
@@ -83,3 +92,14 @@
         </div>
     </div>
 </section>
+
+<br>
+<br>
+<br>
+
+
+<%@ include file="./footer.jsp" %>
+
+</body>
+
+</html>

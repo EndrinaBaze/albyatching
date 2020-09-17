@@ -20,7 +20,7 @@
                 <div class="slider-text">
                     <h1>Albania Yachting</h1>
                     <p>making it simple ...</p>
-                    <a href="services" class="btn btn-primary-color mt-4"> Book Services Now</a>
+                    <a href="bookservice" class="btn btn-primary-color mt-4"> Book Services Now</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -28,7 +28,7 @@
                 <div class="slider-text">
                         <h1>Albania Yachting</h1>
                         <p>making it simple ...</p>
-                    <a href="services" class="btn btn-primary-color mt-4"> Book Services Now</a>
+                    <a href="bookservice" class="btn btn-primary-color mt-4"> Book Services Now</a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,46 @@
 
 
     <!-- Booking form starts here -->
-<%@ include file="./bookservice.jsp" %>
+<section>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 text-center">
+                <div class="title">
+                    <h2><span>Don't Think</span>Book Services Now</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 m-auto booking-form-bg">
+                <div class="booking-form">
+                    <form class="needs-validation" novalidate>
+                        <div class="col-md-6 m-auto">
+                            <div class="form-group text-center">
+                                <select class="form-control custom-select" id="exampleFormControlSelect1">
+                                    <option>Select Service</option>
+                                    <option>Arrival Formalities</option>
+                                    <option>Provisioning</option>
+                                    <option>VIP Tours</option>
+                                    <option>Duty Free Bunkering</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 m-auto">
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-primary-color">Next</button>
+                            </div>
+                        </div>
+
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
     <!-- Booking form ends here -->
 
 
