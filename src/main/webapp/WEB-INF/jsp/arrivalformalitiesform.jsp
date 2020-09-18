@@ -32,16 +32,24 @@
                                                    <div class="col-md-6">
                                                        <div class="form-group">
                                                            <p> From date</p>
-                                                           <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" value="" required>
+                                                           <input type="date" class="form-control" id="exampleFormControlInput1" name="arrival_from" placeholder="dd.mm.yyyy" value="" required>
                                                        </div>
                                                    </div>
 
                                                    <div class="col-md-6">
                                                        <div class="form-group">
                                                            <p> Till date</p>
-                                                           <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" required>
+                                                           <input type="date" class="form-control" id="exampleFormControlInput1" name="arrival_to" placeholder="dd.mm.yyyy" required>
                                                        </div>
                                                    </div>
+
+                                                   <div class="col-md-6">
+                                                       <div class="form-group">
+                                                           <p> Till date</p>
+                                                           <input type="datetime" class="form-control" id="exampleFormControlInput1" name="arrival_time" placeholder="Time" required>
+                                                       </div>
+                                                   </div>
+
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <p> First Name </p>

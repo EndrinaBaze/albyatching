@@ -29,47 +29,41 @@
                     <form class="needs-validation" novalidate>
                         <div class="row">
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <p> From date</p>
-                                    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" value="" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <p> Till date</p>
-                                    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd.mm.yyyy" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <p> First Name </p>
-                                    <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
-                                </div>
-                            </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <p> Last name</p>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
+                                    <input type="text" class="form-control" id="lastName" name="lastname" placeholder="Last Name" value="" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <p> Contact </p>
-                                    <input type="text" class="form-control" id="firstName" placeholder="Phone Number" value="" required>
+                                    <input type="text" class="form-control" id="firstName" name="phone_number" placeholder="Phone Number" value="" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <p>Email Address</p>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com" required>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="yourmailid@company.com" required>
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p>Quantity</p>
+                                    <input type="number" class="form-control" id="exampleFormControlInput1" name="quantity" placeholder="Quantity" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p>City</p>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="dutyfree_city" placeholder="City" required>
+                                </div>
+                            </div>
 
 
                             <%--                        <div class="col-md-6 m-auto">--%>
@@ -86,8 +80,8 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <p> Leave a message </p>
-                                    <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>
+                                    <p> Comments </p>
+                                    <textarea class="form-control" placeholder="Type here..." name="comments" spellcheck="false"></textarea>
                                 </div>
                             </div>
 
