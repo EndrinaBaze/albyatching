@@ -129,7 +129,6 @@
 <!-- Jquery CDN -->
 <script src="${contextPath}/resources/js/jquery/jquery-2.2.4.js"></script>
 
-
 </body>
 
 </html>
