@@ -53,17 +53,18 @@
                         <%--                            </div>--%>
 
 
-                        <%--                            <div class="col-md-6">--%>
-                        <%--                                <div class="form-group">--%>
-                        <%--                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="From date">--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
+<%--                                                    <div class="col-md-6">--%>
+<%--                                                        <div class="form-group">--%>
+<%--                                                            <input type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="From date">--%>
+<%--                                                        </div>--%>
+<%--                                                    </div>--%>
 
                         <%--                            <div class="col-md-6">--%>
                         <%--                                <div class="form-group">--%>
                         <%--                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Till date">--%>
                         <%--                                </div>--%>
                         <%--                            </div>--%>
+
 
                             <div class="col-md-6 m-auto">
                                 <div class="form-group text-center">
