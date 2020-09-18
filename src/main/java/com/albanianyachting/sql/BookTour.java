@@ -31,6 +31,9 @@ public class BookTour implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id", nullable = false)
     private Users agents;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "users_id", nullable = false)
+    private Tours tours;
 
     public BookTour(Long id) {
         this.id = id;
@@ -101,5 +104,13 @@ public class BookTour implements Serializable {
 
     public void setAgents(Users agents) {
         this.agents = agents;
+    }
+
+    public Tours getTours() {
+        return tours;
+    }
+
+    public void setTours(Tours tours) {
+        this.tours = tours;
     }
 }

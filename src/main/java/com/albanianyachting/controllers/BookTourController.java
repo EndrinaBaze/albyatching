@@ -1,6 +1,7 @@
 package com.albanianyachting.controllers;
 
 import com.albanianyachting.dto.BookTourDTO;
+import com.albanianyachting.dto.UsersDTO;
 import com.albanianyachting.dto.mapper.BookTourMapper;
 import com.albanianyachting.services.BookTourService;
 import com.albanianyachting.sql.BookTour;
@@ -28,6 +29,16 @@ public class BookTourController {
 
     @GetMapping("/bookTour")
     public List<BookTourDTO> getBookTour(){return this.bookTourService.findBookTour();}
+
+    @GetMapping("/bookTour/byUsers/{users}")
+    public List<BookTourDTO> getBookToursByUsers(@PathVariable Long users) {
+        return bookTourService.findBookTourByUsers(users);
+    }
+
+    @GetMapping("/bookTour/byTours/{tours}")
+    public List<BookTourDTO> getBookToursByTours(@PathVariable Long tours) {
+        return bookTourService.findBookTourByTours(tours);
+    }
 
     @DeleteMapping("/bookTour/{id}")
     public BookTourDTO deleteBookTour(@PathVariable Long id){
