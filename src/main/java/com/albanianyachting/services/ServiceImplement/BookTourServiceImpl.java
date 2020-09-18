@@ -1,10 +1,12 @@
 package com.albanianyachting.services.ServiceImplement;
 
 import com.albanianyachting.dto.BookTourDTO;
+import com.albanianyachting.dto.UsersDTO;
 import com.albanianyachting.dto.mapper.BookTourMapper;
 import com.albanianyachting.services.BookTourService;
 import com.albanianyachting.sql.BookTour;
 import com.albanianyachting.sql.Repository.BookTourRepository;
+import com.albanianyachting.sql.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +58,42 @@ if (ebookTour!=null){
                 for (BookTour ebook: bookTourList){
                     bookTourDTOList.add(mapper.toDto(ebook));
 
+                }
+            }
+        }catch (Exception e){
+            Logger.getLogger(BookTourServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
+        }
+        return bookTourDTOList;
+    }
+
+    @Override
+    public List<BookTourDTO> findBookTourByUsers(Long users) {
+        List<BookTourDTO> bookTourDTOList = null;
+        List<BookTour> bookTourList = null;
+        try {
+            bookTourList = this.bookTourRepository.findBookToursByUsers(users);
+            if (bookTourList != null && !bookTourList.isEmpty()) {
+                bookTourDTOList = new ArrayList<>();
+                for (BookTour singO : bookTourList) {
+                    bookTourDTOList.add(this.mapper.toDto(singO));
+                }
+            }
+        }catch (Exception e){
+            Logger.getLogger(BookTourServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
+        }
+        return bookTourDTOList;
+    }
+
+    @Override
+    public List<BookTourDTO> findBookTourByTours(Long tours) {
+        List<BookTourDTO> bookTourDTOList = null;
+        List<BookTour> bookTourList = null;
+        try {
+            bookTourList = this.bookTourRepository.findBookToursByTours(tours);
+            if (bookTourList != null && !bookTourList.isEmpty()) {
+                bookTourDTOList = new ArrayList<>();
+                for (BookTour singO : bookTourList) {
+                    bookTourDTOList.add(this.mapper.toDto(singO));
                 }
             }
         }catch (Exception e){

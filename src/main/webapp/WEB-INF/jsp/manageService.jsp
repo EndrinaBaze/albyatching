@@ -39,7 +39,6 @@
                             </c:choose>
                         </div>
                     </div>
-<%--                    <form:hidden path="id"/>--%>
                 </form:form>
             </div>
         </div>
