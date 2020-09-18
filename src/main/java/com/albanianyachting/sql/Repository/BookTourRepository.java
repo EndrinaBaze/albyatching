@@ -14,9 +14,9 @@ public interface BookTourRepository extends JpaRepository<BookTour, Long> {
     @Query(value = "SELECT r FROM BookTour r WHERE r.id = :id")
     BookTour findOne(@Param("id") Long id);
 
-    @Query(value = "SELECT u FROM BookTour u WHERE u.agents = :users")
-    List<BookTour> findBookToursByUsers(@Param("users") Long users);
-
-    @Query(value = "SELECT u FROM BookTour u WHERE u.tours = :tours")
-    List<BookTour> findBookToursByTours(@Param("tours") Long tours);
+//    @Query(value = "SELECT u FROM BookTour u WHERE u.agents = :users")
+//    List<BookTour> findBookToursByUsers(@Param("users") Long users);
+//
+//    @Query(value = "SELECT u FROM BookTour u WHERE u.tours = :tours")
+//    List<BookTour> findBookToursByTours(@Param("tours") Long tours);
 }

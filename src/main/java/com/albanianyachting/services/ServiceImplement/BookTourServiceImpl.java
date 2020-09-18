@@ -71,7 +71,7 @@ if (ebookTour!=null){
         List<BookTourDTO> bookTourDTOList = null;
         List<BookTour> bookTourList = null;
         try {
-            bookTourList = this.bookTourRepository.findBookToursByUsers(users);
+//            bookTourList = this.bookTourRepository.findBookToursByUsers(users);
             if (bookTourList != null && !bookTourList.isEmpty()) {
                 bookTourDTOList = new ArrayList<>();
                 for (BookTour singO : bookTourList) {
@@ -89,7 +89,7 @@ if (ebookTour!=null){
         List<BookTourDTO> bookTourDTOList = null;
         List<BookTour> bookTourList = null;
         try {
-            bookTourList = this.bookTourRepository.findBookToursByTours(tours);
+//            bookTourList = this.bookTourRepository.findBookToursByTours(tours);
             if (bookTourList != null && !bookTourList.isEmpty()) {
                 bookTourDTOList = new ArrayList<>();
                 for (BookTour singO : bookTourList) {
