@@ -125,6 +125,21 @@ public class HomeController {
     public String arrivalformalitiesFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "arrivalformalitiesform";
     }
+    @GetMapping(value = {"/booktourform"})
+    @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
+    public String booktourFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "booktourform";
+    }
+    @GetMapping(value = {"/bunkeringform"})
+    @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
+    public String bunkeringFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "bunkeringform";
+    }
+    @GetMapping(value = {"/provisioningform"})
+    @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
+    public String provisioningFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "provisioningform";
+    }
     @GetMapping(value = {"/servicesCP"})
     public String getServices(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         model.addAttribute("listServices", this.servicesService.findServices());
