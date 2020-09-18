@@ -34,6 +34,8 @@ public class HomeController {
     private UsersService usersService;
     @Autowired
     private ServicesService servicesService;
+    @Autowired
+    private PortsService portsService;
 
     @GetMapping(value = {"/"})
     @ApiOperation(value = "Return home page", notes = "Retrieving the collection of home page operations")
@@ -105,6 +107,18 @@ public class HomeController {
     @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
     public String bookservicePage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "bookservice";
+    }
+
+    @GetMapping(value = {"/ports"})
+    @ApiOperation(value = "Return ports page", notes = "Retrieving the collection of ports page operations")
+    public String portsPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "ports";
+    }
+    @GetMapping(value = {"/portsCP"})
+    @ApiOperation(value = "Return ports page", notes = "Retrieving the collection of ports page operations")
+    public String portsCPPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("listPorts", this.portsService.findPorts());
+        return "portsCP";
     }
     @GetMapping(value = {"/arrivalformalitiesForm"})
     @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")

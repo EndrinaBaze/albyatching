@@ -57,6 +57,9 @@
                 <a href="provisioning"><i class="fa fa-pie-chart"></i> <span class="nav-label">Provisioning</span>  </a>
             </li>
             <li>
+                <a href="portsCP"><i class="fa fa-pie-chart"></i> <span class="nav-label">Ports</span>  </a>
+            </li>
+            <li>
                 <a href="users"><i class="fa fa-flask"></i> <span class="nav-label">Agents</span></a>
             </li>
 
