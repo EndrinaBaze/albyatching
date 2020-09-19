@@ -17,7 +17,7 @@
         <div class="row justify-content-md-center">
             <div class="col-lg-6 text-center">
                 <div class="title">
-                    <h2>Arrival Formalities</h2>
+                    <h2>VIP Tours</h2>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <p> Contact </p>
-                                    <input type="text" class="form-control" id="firstName" name="phone_number" placeholder="Phone Number" value="" required>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="phone_number" placeholder="Phone Number" value="" required>
                                 </div>
                             </div>
 

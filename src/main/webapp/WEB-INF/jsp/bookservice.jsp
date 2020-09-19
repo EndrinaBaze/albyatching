@@ -70,10 +70,12 @@
                                 <div class="form-group text-center">
                                     <select name= "URL" class="form-control custom-select" id="exampleFormControlSelect1" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
                                         <option value="#">Select Service</option>
-                                        <option value="about">Arrival Formalities</option>
+                                        <option value="arrivalformalitiesform">Arrival Formalities</option>
                                         <option value="provisioningform">Provisioning</option>
-                                        <option value="viptoursform">VIP Tours</option>
+                                        <option value="ports">Ports</option>
+                                        <option value="booktourform">VIP Tours</option>
                                         <option value="bunkeringform">Duty Free Bunkering</option>
+
                                     </select>
                                 </div>
                             </div>
