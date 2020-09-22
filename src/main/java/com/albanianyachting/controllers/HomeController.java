@@ -120,7 +120,7 @@ public class HomeController {
         model.addAttribute("listPorts", this.portsService.findPorts());
         return "portsCP";
     }
-    @GetMapping(value = {"/arrivalformalitiesForm"})
+    @GetMapping(value = {"/arrivalformalitiesform"})
     @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
     public String arrivalformalitiesFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         return "arrivalformalitiesform";
