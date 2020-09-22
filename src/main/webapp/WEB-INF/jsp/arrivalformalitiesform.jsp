@@ -67,7 +67,8 @@
                                                            </select>
                                                        </div>
                                                    </div>
-                                                   <div class="col-md-2">
+                                                   <p style="margin-top: 5%"><b>:</b></p>
+                                                       <div class="col-md-2">
                                                    <div class="form-group">
                                                        <br>
                                                        <select  class="form-control custom-select" id="exampleFormControlInput1">
