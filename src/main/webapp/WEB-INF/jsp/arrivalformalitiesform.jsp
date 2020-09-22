@@ -31,19 +31,12 @@
 
                                                    <div class="col-md-6">
                                                        <div class="form-group">
-                                                           <p> From date</p>
-                                                           <input type="text" class="form-control" id="exampleFormControlInput1" name="arrival_from" placeholder="dd.mm.yyyy" value="" required>
+                                                           <p>Date</p>
+                                                           <input type="date" class="form-control" id="exampleFormControlInput1" name="arrivalTime" placeholder="dd.mm.yyyy" value="" required>
                                                        </div>
                                                    </div>
 
-                                                   <div class="col-md-6">
-                                                       <div class="form-group">
-                                                           <p> Till date</p>
-                                                           <input type="text" class="form-control" id="exampleFormControlInput1" name="arrival_to" placeholder="dd.mm.yyyy" required>
-                                                       </div>
-                                                   </div>
-
-                                                   <div class="col-md-6">
+                                                   <div class="col-md-2">
                                                        <div class="form-group">
                                                            <p> Time</p>
                                                            <select  class="form-control custom-select" id="exampleFormControlInput1" name="arrival_time">
@@ -74,7 +67,7 @@
                                                            </select>
                                                        </div>
                                                    </div>
-                                                   <div class="col-md-6">
+                                                   <div class="col-md-2">
                                                    <div class="form-group">
                                                        <br>
                                                        <select  class="form-control custom-select" id="exampleFormControlInput1">
