@@ -6,49 +6,48 @@
 
 <!DOCTYPE html>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" /><html lang="zxx">
+
+<header>
+    <link href="${contextPath}/resources/controlpanel/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/resources/controlpanel/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/switchery/switchery.css" rel="stylesheet">
+
+    <link href=${contextPath}/resources/controlpanel/"css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="${contextPath}/resources/controlpanel/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/select2/select2.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
+
+    <link href="${contextPath}/resources/controlpanel/css/animate.css" rel="stylesheet">
+    <link href="${contextPath}/resources/controlpanel/css/styleAY.css" rel="stylesheet">
+</header>
 <%@ include file="./header.jsp" %>
-<html>
-
-<body>
-
-<link href="${contextPath}/resources/controlpanel/css/bootstrap.min.css" rel="stylesheet">
-<link href="${contextPath}/resources/controlpanel/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/iCheck/custom.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/cropper/cropper.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/switchery/switchery.css" rel="stylesheet">
-
-<link href=${contextPath}/resources/controlpanel/"css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
-<link href="${contextPath}/resources/controlpanel/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/select2/select2.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
-
-<link href="${contextPath}/resources/controlpanel/css/animate.css" rel="stylesheet">
-<link href="${contextPath}/resources/controlpanel/css/styleAY.css" rel="stylesheet">
 
 
 <br>
@@ -70,57 +69,80 @@
             <div class="col-md-8 m-auto booking-form-bg">
                 <div class="booking-form">
                     <form class="needs-validation" novalidate>
-                                               <div class="row; col-lg-12">
+                        <div class="row">
                                                    <div class="col-md-6">
                                                        <div class="form-group" id="data_1">
-                                                           <label class="font-normal">Date</label>
-                                                           <div class="input-group date">
-                                                               <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="">
+                                                           <p> Arrival From </p>
+                                                               <div class="input-group date">
+                                                                   <div class="input-group-addon">
+                                                                       <i class="fa fa-calendar ">
+                                                                       </i>
+                                                                   </div>
+                                                                   <input class="input field" class="form-control" value="" placeholder="MM/DD/YYYY" type="text"/>
                                                            </div>
                                                        </div>
+                                                   </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group" id="data_1">
+                                    <p> Arrival To </p>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar">
+                                            </i>
+                                        </div>
+                                        <input  class="input field" class="form-control" value="" placeholder="MM/DD/YYYY" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
 <%--                                                       <div class="form-group">--%>
 <%--                                                           <p>Date</p>--%>
 <%--                                                           <input type="date" class="form-control" id="exampleFormControlInput1" name="arrivalTime" placeholder="dd.mm.yyyy" value="" required>--%>
 <%--                                                       </div>--%>
 <%--                                                   </div>--%>
-                                                   </div>
-                                                   <div class="col-md-6" style="margin-top:-12%; margin-left: 60%">
+
+                                                   <div class="col-md-6" >
+                                                      <div class="form-group" >
                                                            <p> Time</p>
-                                                       <div>
+                                                       <div style>
                                                                <input type="number" id="hour" name="quantity" min="00" max="23">
                                                    </div>
-                                                       <p style="margin-left: 18%; margin-top: -7%"><b>:</b></p>
-                                                       <div style="margin-top: -12%; margin-left: 23%">
+                                                       <p style="margin-left: 35%; margin-top: -11.5%"><b>:</b></p>
+                                                       <div style="margin-top: -10%; margin-left:40%">
                                                        <input  type="number" id="minutes" name="quantity" min="00" max="60">
                                                        </div>
                                                    </div>
-<%--                                                    <div class="col-md-6">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <p> First Name </p>--%>
-<%--                                                            <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
+                                                   </div>
 
-<%--                                                    <div class="col-md-6">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <p> Last name</p>--%>
-<%--                                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
+                                                    <div class="col-md-6" >
+                                                        <div class="form-group">
+                                                            <p> First Name </p>
+                                                            <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
+                                                        </div>
+                                                    </div>
 
-<%--                                                    <div class="col-md-6">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <p> Contact </p>--%>
-<%--                                                            <input type="text" class="form-control" id="firstName" placeholder="Phone Number" value="" required>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <p> Last name</p>
+                                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
+                                                        </div>
+                                                    </div>
 
-<%--                                                    <div class="col-md-6">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <p>Email Address</p>--%>
-<%--                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com" required>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <p> Contact </p>
+                                                            <input type="text" class="form-control" id="firstName" placeholder="Phone Number" value="" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <p>Email Address</p>
+                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com" required>
+                                                        </div>
+                                                    </div>
 
 
 
@@ -136,16 +158,16 @@
 <%--                            </div>--%>
 <%--                        </div>--%>
 
-<%--                                                    <div class="col-md-12">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <p> Leave a message </p>--%>
-<%--                                                            <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<br>
-<br>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <p> Leave a message </p>
+                                                            <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>
+                                                        </div>
+                                                    </div>
 
-                                                   <div class="col-md-6 m-auto">
+<br>
+<br>
+                        <div class="col-md-6 m-auto">
                             <div class="form-group text-center">
                                 <button type="button" class="btn btn-primary-color">Submit</button>
                             </div>
@@ -183,32 +205,12 @@
 <!-- JSKnob -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/jsKnob/jquery.knob.js"></script>
 
-<!-- Input Mask-->
-<script src="${contextPath}/resources/controlpanel/js/plugins/jasny/jasny-bootstrap.min.js"></script>
-
 <!-- Data picker -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-<!-- NouSlider -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/nouslider/jquery.nouislider.min.js"></script>
-
-<!-- Switchery -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/switchery/switchery.js"></script>
-
-<!-- IonRangeSlider -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
-
-<!-- iCheck -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/iCheck/icheck.min.js"></script>
 
 <!-- MENU -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-
-<!-- Color picker -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-
-<!-- Clock picker -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/clockpicker/clockpicker.js"></script>
 
 <!-- Image cropper -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/cropper/cropper.min.js"></script>
@@ -222,14 +224,10 @@
 <!-- Select2 -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/select2/select2.full.min.js"></script>
 
-<!-- TouchSpin -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
 <!-- Tags Input -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
-<!-- Dual Listbox -->
-<script src="${contextPath}/resources/controlpanel/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
 
 
 <script>
@@ -549,6 +547,24 @@
 
 
 </script>
+
+
+
+<!-- Popper JS -->
+<script src="${contextPath}/resources/js/bootstrap/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="${contextPath}/resources/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- JavaScript Libraries -->
+<script src="${contextPath}/resources/js/counterup/jquery.counterup.js"></script>
+
+<!-- Sticky Navbar Javascript File -->
+<script src="${contextPath}/resources/js/easing/easing.min.js"></script>
+<script src="${contextPath}/resources/js/sticky/sticky.js"></script>
+<script src="${contextPath}/resources/js/main/main.js"></script>
+
+
 
 </body>
 
