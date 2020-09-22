@@ -107,6 +107,7 @@
                                     <option value="#">Select Service</option>
                                     <option value="about">Arrival Formalities</option>
                                     <option value="provisioningform">Provisioning</option>
+                                    <option value="ports">Ports</option>
                                     <option value="booktourform">VIP Tours</option>
                                     <option value="bunkeringform">Duty Free Bunkering</option>
                                 </select>

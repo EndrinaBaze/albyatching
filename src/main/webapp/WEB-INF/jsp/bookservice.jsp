@@ -53,11 +53,11 @@
                         <%--                            </div>--%>
 
 
-                        <%--                            <div class="col-md-6">--%>
-                        <%--                                <div class="form-group">--%>
-                        <%--                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="From date">--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
+<%--                                                    <div class="col-md-6">--%>
+<%--                                                        <div class="form-group">--%>
+<%--                                                            <input type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="From date">--%>
+<%--                                                        </div>--%>
+<%--                                                    </div>--%>
 
                         <%--                            <div class="col-md-6">--%>
                         <%--                                <div class="form-group">--%>
@@ -65,14 +65,17 @@
                         <%--                                </div>--%>
                         <%--                            </div>--%>
 
+
                             <div class="col-md-6 m-auto">
                                 <div class="form-group text-center">
                                     <select name= "URL" class="form-control custom-select" id="exampleFormControlSelect1" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
                                         <option value="#">Select Service</option>
-                                        <option value="about">Arrival Formalities</option>
+                                        <option value="arrivalformalitiesform">Arrival Formalities</option>
                                         <option value="provisioningform">Provisioning</option>
-                                        <option value="viptoursform">VIP Tours</option>
+                                        <option value="ports">Ports</option>
+                                        <option value="booktourform">VIP Tours</option>
                                         <option value="bunkeringform">Duty Free Bunkering</option>
+
                                     </select>
                                 </div>
                             </div>
