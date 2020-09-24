@@ -32,27 +32,24 @@
                     <form class="needs-validation" novalidate>
                         <div class="row">
 
-
-                          
-
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <p> Last name</p>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
+                                    <p> Name</p>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Name" value="" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <p> Contact </p>
-                                    <input type="text" class="form-control" id="firstName" placeholder="Phone Number" value="" required>
+                                    <p> Product </p>
+                                    <input type="text" class="form-control" id="product" placeholder="Product" value="" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <p>Email Address</p>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="yourmailid@company.com" required>
+                                    <p>Quantity</p>
+                                    <input type="number" class="form-control" id="quantity" placeholder="" min="0" required>
                                 </div>
                             </div>
 
@@ -71,12 +68,12 @@
 
 
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <p> Leave a message </p>
-                                    <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>
-                                </div>
-                            </div>
+<%--                            <div class="col-md-12">--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <p> Leave a message </p>--%>
+<%--                                    <textarea class="form-control" placeholder="Type here..." spellcheck="false"></textarea>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
 
                             <div class="col-md-6 m-auto">
                                 <div class="form-group text-center">
