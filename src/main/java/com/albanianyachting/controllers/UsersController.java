@@ -2,6 +2,7 @@ package com.albanianyachting.controllers;
 
 import com.albanianyachting.dto.UsersDTO;
 import com.albanianyachting.dto.mapper.UsersMapper;
+import com.albanianyachting.exceptionhandler.EntityNotFoundException;
 import com.albanianyachting.services.UsersService;
 import com.albanianyachting.sql.Repository.UsersRepository;
 import com.albanianyachting.sql.Users;
@@ -36,7 +37,7 @@ public class UsersController {
     }
 
     @GetMapping("/users/byRole/{role}")
-    public List<UsersDTO> getUsersByRole(@PathVariable Long role) {
+    public List<UsersDTO> getUsersByRole(@PathVariable Long role) throws EntityNotFoundException{
 
         return usersService.findUserByRole(role);
     }

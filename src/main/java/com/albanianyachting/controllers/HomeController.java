@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 
-@Controller
+@Controller(value = "ports")
 @Api("Set of endpoints for Creating, Retrieving, Updating and Deleting.")
 public class HomeController {
     @Autowired
