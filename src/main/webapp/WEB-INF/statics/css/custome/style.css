@@ -56,6 +56,22 @@ body {
 
 
 /* ====== 1.1 - COMMON STYLE  ====== */
+.icons i {
+    position: absolute;
+}
+
+
+.fas {
+    padding: 10px;
+}
+
+input {
+    text-align: left;
+    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+    line-height: normal;
+}
+
 .dark{
     background-color: #111111;
     padding: 10px;
