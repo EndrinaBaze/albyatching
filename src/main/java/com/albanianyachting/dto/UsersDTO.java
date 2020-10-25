@@ -1,15 +1,18 @@
 package com.albanianyachting.dto;
 
+import com.albanianyachting.sql.Role;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class UsersDTO implements Serializable {
     private Long id;
-    private String name;
-    private String lastname;
+   // private String name;
+   // private String lastname;
     private String email;
     private String username;
     private String password;
-    private RoleDTO role;
+    private List<Role> role;
 
     public UsersDTO() {
     }
@@ -20,22 +23,6 @@ public class UsersDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -62,12 +49,11 @@ public class UsersDTO implements Serializable {
         this.password = password;
     }
 
-    public RoleDTO getRole() {
+    public List<Role> getRole() {
         return role;
     }
 
-    public void setRole(RoleDTO role) {
+    public void setRole(List<Role> role) {
         this.role = role;
     }
-
 }

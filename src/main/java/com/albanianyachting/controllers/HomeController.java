@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 
-@Controller(value = "ports")
+@Controller(value = "home")
 @Api("Set of endpoints for Creating, Retrieving, Updating and Deleting.")
 public class HomeController {
     @Autowired
@@ -167,5 +167,12 @@ public class HomeController {
             model.addAttribute("servicesDTO", servicesDTO);
             return "manageService";
         }
+    }
+
+    // test billing form
+    @GetMapping(value = {"/billingform"})
+    @ApiOperation(value = "Return billingform page", notes = "Retrieving the billingform page operations")
+    public String billingFormPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        return "billingform";
     }
 }

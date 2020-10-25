@@ -70,6 +70,8 @@
                                 </ul>
                             </li>
                             <li><a href="contact" class="nav-link">Contact</a></li>
+                            <li><a href="billingform" class="nav-link">Billing Form</a></li>
+
                         </ul>
                 </nav>
             </div>

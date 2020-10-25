@@ -4,7 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@page contentType="text/html" pageEncoding="x-iso-8859-11"%>
 <!DOCTYPE html>
-<c:set var="contextPath" value="${pageContext.request.contextPath}" /><html lang="zxx">
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<html lang="zxx">
 
 <%@ include file="./header.jsp" %>
 

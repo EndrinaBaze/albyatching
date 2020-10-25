@@ -1,90 +1,84 @@
 package com.albanianyachting.services.ServiceImplement;
 
-import com.albanianyachting.dto.UsersDTO;
-import com.albanianyachting.dto.mapper.UsersMapper;
+import com.albanianyachting.exceptionhandler.CustomException;
+import com.albanianyachting.security.JwtTokenProvider;
 import com.albanianyachting.services.UsersService;
 import com.albanianyachting.sql.Repository.UsersRepository;
 import com.albanianyachting.sql.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Service
 public class UsersServiceImpl implements UsersService {
 
     @Autowired
-    private UsersRepository usersRepository;
+    private UsersRepository userRepository;
+
     @Autowired
-    private UsersMapper mapper;
+    private PasswordEncoder passwordEncoder;
 
-    @Override
-    public UsersDTO createUser(UsersDTO users) {
-        UsersDTO usersDTO = new UsersDTO();
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    public String signin(String username, String password) {
         try {
-            Users entity = this.mapper.toEntity(users);
-            entity= this.usersRepository.saveAndFlush(entity);
-            usersDTO=this.mapper.toDto(entity);
-        } catch (Exception e) {
-            Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+            return jwtTokenProvider.createToken(username, userRepository.findByUsername(username).getRoles());
+        } catch (AuthenticationException e) {
+            throw new CustomException("Invalid username/password supplied", HttpStatus.UNPROCESSABLE_ENTITY);
         }
-        return usersDTO;
     }
 
-    @Override
-    public UsersDTO updateUser(UsersDTO users) {
-        try {
-            Users eUsers = this.usersRepository.findOne(users.getId());
-            if (eUsers != null) {
-                eUsers = this.mapper.toEntity(users);
-                eUsers = this.usersRepository.saveAndFlush(eUsers);
-                users = this.mapper.toDto(eUsers);
-            }
-
-        } catch (Exception e) {
-            Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
+    public String signup(Users user) {
+        if (!userRepository.existsByUsername(user.getUsername())) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userRepository.save(user);
+            return jwtTokenProvider.createToken(user.getUsername(), user.getRoles());
+        } else {
+            throw new CustomException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
         }
-        return users;
     }
 
-    @Override
-    public List<UsersDTO> findUsers() {
-
-        List<UsersDTO> listUsersDTO = new ArrayList<>();
-        try {
-            List<Users> listEUsersDTO = this.usersRepository.findAll();
-            if (listEUsersDTO != null && !listEUsersDTO.isEmpty()) {
-                for (Users eUsers : listEUsersDTO) {
-                    listUsersDTO.add(this.mapper.toDto(eUsers));
-                }
-            }
-        } catch (Exception e) {
-            Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
-
-        }
-        return listUsersDTO;
+    public void delete(String username) {
+        userRepository.deleteByUsername(username);
     }
 
-    @Override
-    public List<UsersDTO> findUserByRole(Long role) {
-        List<UsersDTO> listUsers = null;
-        List<Users> listEUsers = null;
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
+    }
 
-        try {
-                listEUsers = this.usersRepository.findUsersByRole(role);
-            if (listEUsers != null && !listEUsers.isEmpty()) {
-                listUsers = new ArrayList<>();
-                for (Users singO : listEUsers) {
-                    listUsers.add(this.mapper.toDto(singO));
-                }
-            }
-        } catch (Exception e) {
-            Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, e.getMessage(), e);
-
+    public Users search(String username) {
+        Users user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new CustomException("The user doesn't exist", HttpStatus.NOT_FOUND);
         }
-        return listUsers;
+        return user;
+    }
+
+    public Users whoami(HttpServletRequest req) {
+        return userRepository.findByUsername(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
+    }
+
+    public String refresh(String username) {
+        return jwtTokenProvider.createToken(username, userRepository.findByUsername(username).getRoles());
+    }
+
+    public List<Users> findUsers() {
+        List<Users> user = userRepository.findAll();
+        if (user == null || user.isEmpty()) {
+            throw new CustomException("No users were found", HttpStatus.NOT_FOUND);
+        }
+        return user;
     }
 }

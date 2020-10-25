@@ -2,6 +2,7 @@ package com.albanianyachting.sql;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Proxy;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,7 +10,8 @@ import java.io.Serializable;
 @Table(name = "bunker_quote")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Proxy(lazy = false)
-public class BunkerQuote implements Serializable {
+@Where(clause = "status is null or status=true")
+public class BunkerQuote extends Auditable<String> implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
