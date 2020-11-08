@@ -60,7 +60,7 @@ public class HomeController {
     @GetMapping(value = {"/login"})
     @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
     public String loginPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        return "login";
+        return "admin/login";
     }
     @GetMapping(value = {"/controlpanel"})
     @ApiOperation(value = "Return controlpanel page", notes = "Retrieving the collection of controlpanel page operations")

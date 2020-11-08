@@ -32,13 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Entry points
         http.authorizeRequests()//
-                .antMatchers("/").permitAll()//
+                .antMatchers("/login").permitAll()//
 
                 .antMatchers("/api/users/signin").permitAll()//
-                .antMatchers("/api/users/signup").permitAll()//
+                .antMatchers("/api/users/signup").permitAll();//
                 // .antMatchers("/h2-console/**/**").permitAll()
                 // Disallow everything else..
-                .anyRequest().authenticated();
+               // .anyRequest().authenticated();
 
         // If a user try to access a resource without having enough permissions
         http.exceptionHandling().accessDeniedPage("/login");
