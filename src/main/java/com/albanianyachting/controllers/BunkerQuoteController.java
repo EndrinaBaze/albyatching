@@ -6,11 +6,12 @@ import com.albanianyachting.services.BunkerQuoteService;
 import com.albanianyachting.sql.BunkerQuote;
 import com.albanianyachting.sql.Repository.BunkerQuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class BunkerQuoteController {
     @Autowired

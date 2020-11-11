@@ -19,7 +19,9 @@ import java.util.List;
 public class Users extends Auditable<String>{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
 
     @Size(min = 4, max = 255, message = "Minimum username length: 4 characters")

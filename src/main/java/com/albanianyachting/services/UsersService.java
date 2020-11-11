@@ -1,5 +1,6 @@
 package com.albanianyachting.services;
 
+import com.albanianyachting.dto.UsersDTO;
 import com.albanianyachting.sql.Users;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,10 @@ public interface UsersService {
     String signin(String username, String password);
 
     String signup(Users user);
+
+    Users createUserFromAdmin(Users user);
+
+    Users updateUserFromAdmin(Users user);
 
     void delete(String username);
 

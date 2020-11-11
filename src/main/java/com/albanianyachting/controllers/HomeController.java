@@ -1,7 +1,9 @@
 package com.albanianyachting.controllers;
 
 import com.albanianyachting.dto.ServicesDTO;
+import com.albanianyachting.dto.UsersDTO;
 import com.albanianyachting.services.*;
+import com.albanianyachting.sql.Users;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 @Controller(value = "home")
 @Api("Set of endpoints for Creating, Retrieving, Updating and Deleting.")
@@ -60,7 +63,22 @@ public class HomeController {
     @GetMapping(value = {"/login"})
     @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
     public String loginPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("usersDTO",new UsersDTO());
         return "admin/login";
+    }
+
+    @GetMapping(value = {"/register"})
+    @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
+    public String registerPager(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("usersDTO",new UsersDTO());
+        return "admin/register";
+    }
+
+    @PostMapping(value = {"/add-users"})
+    @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
+    public String addUsersPager(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        model.addAttribute("usersDTO",new UsersDTO());
+        return "admin/add-users";
     }
     @GetMapping(value = {"/controlpanel"})
     @ApiOperation(value = "Return controlpanel page", notes = "Retrieving the collection of controlpanel page operations")
@@ -100,7 +118,8 @@ public class HomeController {
     @GetMapping(value = {"/users"})
     @ApiOperation(value = "Return users page", notes = "Retrieving the collection of users page operations")
     public String agentsPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        model.addAttribute("listAgents", this.usersService.findUsers());
+       // model.addAttribute("listAgents", this.usersService.findUsers());
+        model.addAttribute("listAgents", new ArrayList<Users>());
         return "users";
     }
     @GetMapping(value = {"/bookservice"})

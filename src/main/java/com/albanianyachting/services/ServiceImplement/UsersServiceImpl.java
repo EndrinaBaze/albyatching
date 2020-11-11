@@ -1,5 +1,7 @@
 package com.albanianyachting.services.ServiceImplement;
 
+import com.albanianyachting.dto.UsersDTO;
+import com.albanianyachting.dto.mapper.UsersMapper;
 import com.albanianyachting.exceptionhandler.CustomException;
 import com.albanianyachting.security.JwtTokenProvider;
 import com.albanianyachting.services.UsersService;
@@ -45,6 +47,24 @@ public class UsersServiceImpl implements UsersService {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
             return jwtTokenProvider.createToken(user.getUsername(), user.getRoles());
+        } else {
+            throw new CustomException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+    }
+
+    public Users createUserFromAdmin(Users user) {
+        if (!userRepository.existsByUsername(user.getUsername())) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            return userRepository.save(user);
+        } else {
+            throw new CustomException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+    }
+
+    public Users updateUserFromAdmin(Users user) {
+        if (!userRepository.existsByUsername(user.getUsername())) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            return userRepository.save(user);
         } else {
             throw new CustomException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
         }

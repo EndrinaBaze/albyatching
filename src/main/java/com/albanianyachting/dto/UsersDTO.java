@@ -12,7 +12,7 @@ public class UsersDTO implements Serializable {
     private String email;
     private String username;
     private String password;
-    private List<Role> role;
+    private List<Role> roles;
 
     public UsersDTO() {
     }
@@ -49,11 +49,11 @@ public class UsersDTO implements Serializable {
         this.password = password;
     }
 
-    public List<Role> getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(List<Role> role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

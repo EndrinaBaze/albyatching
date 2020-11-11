@@ -29,8 +29,11 @@ public class JpaAuditingConfiguration {
                 if (SecurityContextHolder.getContext().getAuthentication() != null) {
                     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
                     Object principal = auth.getPrincipal();
-                    UserDetails userDetails = (UserDetails) principal;
-                    return Optional.of(userDetails.getUsername());
+                    if(principal instanceof UserDetails) {
+                        UserDetails userDetails = (UserDetails) principal;
+                        return Optional.of(userDetails.getUsername());
+                    }
+                    return Optional.of((String) principal); // anonymousUser
                 } else {
                     return Optional.ofNullable("Unknown");
                 }

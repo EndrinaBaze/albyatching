@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-@Controller
-@RequestMapping("/api")
+@Controller(value = "services")
+//@RequestMapping("/api")
 public class ServicesController {
     @Autowired
     private ServicesRepository servicesRepository;
@@ -26,17 +26,17 @@ public class ServicesController {
     @Autowired
     private ServicesService servicesService;
 
-    @PostMapping("/services")
+    @PostMapping("/create")
     public ServicesDTO createService(@RequestBody ServicesDTO servicesDTO) {
         return servicesService.createServices(servicesDTO); }
 
-    @PutMapping ("/services")
+    @PutMapping ("/update")
     public ServicesDTO updateService(@RequestBody ServicesDTO servicesDTO) { return servicesService.updateServices(servicesDTO); }
 
-    @GetMapping ("/services")
+    @GetMapping ("/get")
     public List<ServicesDTO> getService() { return servicesService.findServices(); }
 
-    @DeleteMapping("/services/{id}")
+    @DeleteMapping("/delete/{id}")
     public ServicesDTO deleteServices (@PathVariable  Long id){
         final Services services =this.servicesRepository.findOne(id);
         if (services!=null){

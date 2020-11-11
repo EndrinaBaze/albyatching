@@ -31,7 +31,7 @@
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title text-right">
-                            <form:form action="">
+                            <form:form action="${contextPath}/add-users" method="POST">
                                 <button type="submit" class="btn btn-w-m btn-success">Add New Agent</button>
                             </form:form>
                         </div>

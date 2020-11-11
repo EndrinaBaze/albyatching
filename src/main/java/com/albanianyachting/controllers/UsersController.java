@@ -8,10 +8,14 @@ import com.albanianyachting.sql.Repository.UsersRepository;
 import com.albanianyachting.sql.Users;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @RestController
@@ -34,7 +38,7 @@ public class UsersController {
         return usersService.signin(username, password);
     }
 
-    @PostMapping("/signup")
+    @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "${UserController.signup}")
     @ApiResponses(value = {//
             @ApiResponse(code = 400, message = "Something went wrong"), //
@@ -42,6 +46,28 @@ public class UsersController {
             @ApiResponse(code = 422, message = "Username is already in use")})
     public String signup(@ApiParam("Signup User") @RequestBody UsersDTO user) {
         return usersService.signup(usersMapper.toEntity(user));
+    }
+
+    @PostMapping(value = "/add-users", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ApiOperation(value = "${UserController.addUsersFromAdmin}")
+    @ApiResponses(value = {//
+            @ApiResponse(code = 400, message = "Something went wrong"), //
+            @ApiResponse(code = 403, message = "Access denied"), //
+            @ApiResponse(code = 422, message = "Username is already in use")})
+    public UsersDTO addUsersFromAdmin(@ApiParam("Add Users from Admin") @RequestBody UsersDTO user) {
+        return usersMapper.toDto(usersService.createUserFromAdmin(usersMapper.toEntity(user)));
+    }
+
+    @PutMapping(value = "/update-users", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ApiOperation(value = "${UserController.updateUsersFromAdmin}")
+    @ApiResponses(value = {//
+            @ApiResponse(code = 400, message = "Something went wrong"), //
+            @ApiResponse(code = 403, message = "Access denied"), //
+            @ApiResponse(code = 422, message = "Username is already in use")})
+    public UsersDTO updateUsersFromAdmin(@ApiParam("Update Users from Admin") @RequestBody UsersDTO user) {
+        return usersMapper.toDto(usersService.updateUserFromAdmin(usersMapper.toEntity(user)));
     }
 
     @DeleteMapping(value = "/{id}")

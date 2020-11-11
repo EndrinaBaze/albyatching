@@ -30,14 +30,15 @@
         </div>
         <h3 style="color: mintcream">Welcome</h3>
         <p style="color: mintcream">Login in. To see it in action</p>
-        <form:form class="m-t"  action="${contextPath}/signin">
+        <!--action="${contextPath}/api/users/signin"-->
+        <form:form class="m-t" id="login-form" modelAttribute="usersDTO"  >
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Username" required="">
+                <form:input type="text" class="form-control" placeholder="Username" required="" path="username"/>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="">
+                <form:input type="password" class="form-control" placeholder="Password" required="" path="password"/>
             </div>
-            <button type="submit" class="btn btn-success block full-width m-b">Login</button>
+            <button type="submit" id="login-button" class="btn btn-success block full-width m-b">Login</button>
             <a style="color: #0e9aef" href="#"><small>Forgot Password</small></a>
         </form:form>
         <p class="m-t"> <small></small> </p>
@@ -47,5 +48,7 @@
 <script src="${contextPath}/resources/controlpanel/js/jquery-3.1.1.min.js"></script>
 <script src="${contextPath}/resources/controlpanel/js/popper.min.js"></script>
 <script src="${contextPath}/resources/controlpanel/js/bootstrap.js"></script>
+<script src="${contextPath}/resources/js/admin/utils.js"></script>
+
 </body>
 </html>
