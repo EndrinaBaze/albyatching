@@ -82,7 +82,7 @@
                         <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
                     </div>
                     <div class="ibox-content col-lg-12">
-                        <form:form  modelAttribute="usersDTO" method="POST">
+                        <form:form id="submitForm" modelAttribute="usersDTO" method="post">
                             <div class="form-group  row"><label class="col-sm-2 col-form-label">E-mail</label>
                                 <div class="col-sm-10"><form:input type="text" path="email" class="form-control"
                                                                    required="true"/></div>
@@ -113,7 +113,7 @@
                                         <%--                                    </c:choose>--%>
                                         <%--                                </c:forEach>--%>
                                         <%--                            </form:select>--%>
-                                    <form:select id="roles" path="roles" required="required"
+                                    <form:select id="roles" path="roles" required="true"
                                                  class="select2_demo_3  col-lg-12">
                                         <option selected="selected" value="ROLE_ADMIN">ADMIN</option>
                                         <option value="ROLE_CLIENT">CLIENT</option>
@@ -124,12 +124,12 @@
                             <div class="col-lg-12 text-right">
                                 <div class="col-sm-12 col-sm-offset-2 ">
                                     <button id="resetProperty" name="resetProperty" class="btn btn-white btn-sm"
-                                            type="submit">
+                                            >
                                         Cancel
                                     </button>
                                     <c:choose>
                                         <c:when test="${not empty usersDTO.id}">
-                                            <button id="updateUsers" name="updateUsers" class="btn btn-primary btn-sm"
+                                            <button id="updateUsers"  class="btn btn-primary btn-sm"
                                                     type="submit">Update
                                             </button>
                                         </c:when>

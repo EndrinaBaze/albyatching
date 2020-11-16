@@ -68,35 +68,37 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Lastname</th>
-                                        <th>Email</th>
+<%--                                        <th>Name</th>--%>
+<%--                                        <th>Lastname</th>--%>
                                         <th>Username</th>
-                                        <th>Position</th>
+                                        <th>Email</th>
+                                        <th>Roles</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${listAgents}" var="agents">
+                                    <c:forEach items="${listUsers}" var="user">
                                         <tr class="gradeC">
-                                            <td>${agents.id}</td>
-                                            <td>${agents.name}</td>
-                                            <td>${agents.lastname}</td>
-                                            <td>${agents.email}</td>
-                                            <td>${agents.username}</td>
-                                            <td>${agents.role.role}</td>
+                                            <td>${user.id}</td>
+                                            <td>${user.username}</td>
+                                            <td>${user.email}</td>
+                                            <td>${user.roles}</td>
                                             <td style="width: 5%;">
                                                 <table>
                                                     <tr>
                                                         <td>
 
                                                             <small>
+                                                                <form:form action="${contextPath}/edit-users/${user.id}" method="POST">
                                                                 <button class="btn btn-warning  dim " type="submit"  data-toggle="tooltip" data-placement="top" title="Edit"/><i>Edit</i> </button>
+                                                                </form:form>
                                                             </small>
                                                         </td>
                                                         <td>
                                                             <small>
+                                                                <form:form action="${contextPath}/deleteUser/${user.id}" method="POST">
                                                                 <button class="btn btn-danger  dim" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"/><i>Delete</i></button>
+                                                                </form:form>
                                                             </small>
                                                         </td>
                                                     </tr>
@@ -108,11 +110,11 @@
                                     <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Lastname</th>
-                                        <th>Email</th>
+                                        <%--<th>Name</th>--%>
+                                        <%--<th>Lastname</th>--%>
                                         <th>Username</th>
-                                        <th>Position</th>
+                                        <th>Email</th>
+                                        <th>Roles</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>
@@ -178,4 +180,3 @@
 </body>
 
 </html>
-listAgents

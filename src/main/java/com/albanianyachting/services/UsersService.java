@@ -29,4 +29,6 @@ public interface UsersService {
     String refresh(String username);
 
     List<Users> findUsers();
+
+    Users findUsersById(Long id);
 }

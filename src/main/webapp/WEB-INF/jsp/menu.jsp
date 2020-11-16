@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <link href="${contextPath}/resources/controlpanel/css/bootstrap.min.css" rel="stylesheet">
-<link href="${contextPath}/resources/controlpanel/vfont-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="${contextPath}/resources/controlpanel/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 <!-- Toastr style -->
 <link href="${contextPath}/resources/controlpanel/css/plugins/toastr/toastr.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                 <a href="portsCP"><i class="fa fa-pie-chart"></i> <span class="nav-label">Ports</span>  </a>
             </li>
             <li>
-                <a href="users"><i class="fa fa-flask"></i> <span class="nav-label">Agents</span></a>
+                <a href="${contextPath}/users"><i class="fa fa-flask"></i> <span class="nav-label">Agents</span></a>
             </li>
 
         </ul>

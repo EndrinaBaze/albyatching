@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsersServiceImpl implements UsersService {
@@ -100,5 +101,9 @@ public class UsersServiceImpl implements UsersService {
             throw new CustomException("No users were found", HttpStatus.NOT_FOUND);
         }
         return user;
+    }
+
+    public Users findUsersById(Long id) {
+        return userRepository.findOne(id);
     }
 }
