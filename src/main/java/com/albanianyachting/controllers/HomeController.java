@@ -9,6 +9,7 @@ import com.albanianyachting.sql.Role;
 import com.albanianyachting.sql.Users;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 @Controller(value = "home")
 @Api("Set of endpoints for Creating, Retrieving, Updating and Deleting.")
@@ -73,27 +75,36 @@ public class HomeController {
         return "contact";
     }
 
-    @GetMapping(value = {"/login"})
+    @PostMapping(value = {"/login"})
     @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
-    public String loginPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        model.addAttribute("usersDTO", new UsersDTO());
-        return "admin/login";
+    public String loginPage(ModelMap model, @ApiParam("username") @RequestParam String username, //
+                            @ApiParam("password") @RequestParam String password) throws UnsupportedEncodingException {
+        model.addAttribute("jwtToken", this.usersService.signin(username,password));
+        return "admin/admin";
     }
+
+
+
 
     @GetMapping(value = {"/admin"})
     @ApiOperation(value = "Return login page", notes = "Retrieving the collection of login page operations")
     public String adminPage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        boolean hasRole= auth.getAuthorities().
+                        stream().
+                        filter(s -> s!=null && s.toString().equals(Role.ROLE_ADMIN.getAuthority()))
+                .collect(Collectors.toList()).size()>0;
+
         if (auth != null &&
                 auth.getPrincipal() != null
-                && auth.getAuthorities() != null
-                && auth.getAuthorities()
-                .stream().filter(s -> s.equals(Role.ROLE_ADMIN.getAuthority())).findAny().isPresent()
+                && auth.getAuthorities() != null && hasRole&& auth.isAuthenticated()
         ) {
             return "controlpanel";
         }
         model.addAttribute("usersDTO", new UsersDTO());
         return "admin/login";
+//        model.addAttribute("usersDTO", new UsersDTO());
+//        return "admin/admin";
     }
 
     @GetMapping(value = {"/register"})

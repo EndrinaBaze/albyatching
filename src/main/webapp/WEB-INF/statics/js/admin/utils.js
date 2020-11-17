@@ -15,8 +15,25 @@ $(document).ready(function () {
             type: 'post',
             data: $(this).serialize(),
             success: function (token) {
+                console.log(token);
                 localStorage.setItem('access_token', token);
-                window.location.href='http://localhost:8080/admin';
+             //  window.location.href='http://localhost:8080/admin';
+                $.ajax({
+                    url: '/admin',
+                    type: 'get',
+                    headers: {
+                        "Content-type": "application/json",
+                        "Authorization": "Bearer " + localStorage.getItem('access_token')
+                    },
+                    success: function (data) {
+                        document.open();
+                        document.write(data);
+                        document.close();
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                })
             },
             error: function () {
             }
@@ -64,8 +81,10 @@ $(document).ready(function () {
         $.ajax({
             url: '/api/users/add-users',
             type: 'post',
-            contentType: "application/json; charset=utf-8",
-            authorization: "Bearer "+localStorage.getItem('access_token'),
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem('access_token')
+            },
             data: JSON.stringify(usersDTO),
             success: function (usersCreatedDTO) {
                 console.log(usersCreatedDTO);
@@ -91,8 +110,10 @@ $(document).ready(function () {
         $.ajax({
             url: '/api/users/update-users',
             type: 'put',
-            contentType: "application/json; charset=utf-8",
-            authorization: "Bearer "+localStorage.getItem('access_token'),
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem('access_token')
+            },
             data: JSON.stringify(usersDTO),
             success: function (usersCreatedDTO) {
                 console.log(usersCreatedDTO);
