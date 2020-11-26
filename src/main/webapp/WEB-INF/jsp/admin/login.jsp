@@ -49,6 +49,8 @@
 <script src="${contextPath}/resources/controlpanel/js/popper.min.js"></script>
 <script src="${contextPath}/resources/controlpanel/js/bootstrap.js"></script>
 <script src="${contextPath}/resources/js/admin/utils.js"></script>
+<script src="${contextPath}/resources/js/admin/sw.js"></script>
+
 
 </body>
 </html>

@@ -8,6 +8,19 @@ $(document).ready(function () {
         fire_ajax_submit();
 
     });
+
+    function getToken() {
+        return window.localStorage.getItem('access_token');
+    }
+
+    function setupAuth() {
+        $(document).ajaxSend(function (event, jqXhr) {
+            var token = getToken();
+            jqXhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        });
+    }
+
+
     $("#login-form").submit(function (e) {
         e.preventDefault();
         $.ajax({

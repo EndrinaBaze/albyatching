@@ -196,6 +196,8 @@
 <script src="${contextPath}/resources/controlpanel/js/plugins/toastr/toastr.min.js"></script>
 
 <script src="${contextPath}/resources/js/admin/utils.js"></script>
+<script src="${contextPath}/resources/js/admin/sw.js"></script>
+
 
 <script>
     var mem = $('#data_1 .input-group.date').datepicker({

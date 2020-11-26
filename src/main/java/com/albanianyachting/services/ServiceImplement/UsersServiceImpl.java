@@ -38,12 +38,18 @@ public class UsersServiceImpl implements UsersService {
 
     public String signin(String username, String password) {
         try {
-          Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-            String token= jwtTokenProvider.createToken(username, userRepository.findByUsername(username).getRoles());
-          //  SecurityContextHolder.getContext().setAuthentication(auth);
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+            String token = jwtTokenProvider.createToken(username, userRepository.findByUsername(username).getRoles());
+            Authentication auth = jwtTokenProvider.getAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(auth);
+            //    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             return token;
         } catch (AuthenticationException e) {
             throw new CustomException("Invalid username/password supplied", HttpStatus.UNPROCESSABLE_ENTITY);
+        } catch (RuntimeException e) {
+            throw new CustomException("Runtime Exception", HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (Exception e) {
+            throw new CustomException("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

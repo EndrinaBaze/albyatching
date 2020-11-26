@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 // We should use OncePerRequestFilter since we are doing a database call, there is no point in doing this more than once
-public class JwtTokenFilter extends OncePerRequestFilter {
+public class JwtTokenFilter {//extends OncePerRequestFilter {
 
   private JwtTokenProvider jwtTokenProvider;
 
@@ -20,7 +20,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     this.jwtTokenProvider = jwtTokenProvider;
   }
 
-  @Override
+  //@Override
   protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
     String token = jwtTokenProvider.resolveToken(httpServletRequest);
     try {

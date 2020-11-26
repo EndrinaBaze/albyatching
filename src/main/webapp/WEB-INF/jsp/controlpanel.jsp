@@ -69,6 +69,7 @@
 
     <!-- Toastr -->
     <script src="${contextPath}/resources/controlpanel/js/plugins/toastr/toastr.min.js"></script>
+    <script src="${contextPath}/resources/js/admin/sw.js"></script>
 
 </body>
 </html>
