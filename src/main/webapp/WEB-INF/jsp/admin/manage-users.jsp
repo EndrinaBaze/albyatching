@@ -115,7 +115,7 @@
                                         <%--                            </form:select>--%>
                                     <form:select id="roles" path="roles" required="true"
                                                  class="select2_demo_3  col-lg-12">
-                                        <option selected="selected" value="ROLE_ADMIN">ADMIN</option>
+                                        <option value="ROLE_ADMIN">ADMIN</option>
                                         <option value="ROLE_CLIENT">CLIENT</option>
                                     </form:select>
                                 </div>
@@ -195,8 +195,7 @@
 <!-- Toastr -->
 <script src="${contextPath}/resources/controlpanel/js/plugins/toastr/toastr.min.js"></script>
 
-<script src="${contextPath}/resources/js/admin/utils.js"></script>
-<script src="${contextPath}/resources/js/admin/sw.js"></script>
+<script src="${contextPath}/resources/js/admin/manage_users.js"></script>
 
 
 <script>

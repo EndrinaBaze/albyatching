@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -28,7 +29,7 @@ public class Auditable<U>
 
     @CreatedDate
     @Column(name = "created_date")
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
     @LastModifiedBy
     @Column(name = "last_modified_by")
@@ -36,7 +37,7 @@ public class Auditable<U>
 
     @LastModifiedDate
     @Column(name = "last_modified_date")
-    private Date lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
 
     @Column(name = "status")
     private Boolean status;

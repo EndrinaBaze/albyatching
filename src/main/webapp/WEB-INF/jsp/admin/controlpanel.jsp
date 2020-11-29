@@ -8,14 +8,14 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" /><html lang="zxx">
 
 <%--include header--%>
-<%@ include file="./headerCP.jsp" %>
+<%@ include file="../headerCP.jsp" %>
 
 <body>
     <div id="wrapper">
 <%--include menu--%>
-    <%@ include file="./menu.jsp" %>
+    <%@ include file="../menu.jsp" %>
     <div id="page-wrapper" class="gray-bg dashbard-1">
-        <%@ include file="./header2CP.jsp" %>
+        <%@ include file="../header2CP.jsp" %>
 
                 <div class="row  border-bottom white-bg dashboard-header">
 
@@ -69,7 +69,6 @@
 
     <!-- Toastr -->
     <script src="${contextPath}/resources/controlpanel/js/plugins/toastr/toastr.min.js"></script>
-    <script src="${contextPath}/resources/js/admin/sw.js"></script>
 
 </body>
 </html>

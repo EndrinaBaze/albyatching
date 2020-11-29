@@ -31,7 +31,7 @@
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title text-right">
-                            <form:form action="${contextPath}/add-users" method="POST">
+                            <form:form action="${contextPath}/admin/add-users" method="POST">
                                 <button type="submit" class="btn btn-w-m btn-success">Add New Agent</button>
                             </form:form>
                         </div>
@@ -89,14 +89,14 @@
                                                         <td>
 
                                                             <small>
-                                                                <form:form action="${contextPath}/edit-users/${user.id}" method="POST">
+                                                                <form:form action="${contextPath}/admin/edit-users/${user.id}" method="POST">
                                                                 <button class="btn btn-warning  dim " type="submit"  data-toggle="tooltip" data-placement="top" title="Edit"/><i>Edit</i> </button>
                                                                 </form:form>
                                                             </small>
                                                         </td>
                                                         <td>
                                                             <small>
-                                                                <form:form action="${contextPath}/deleteUser/${user.id}" method="POST">
+                                                                <form:form action="${contextPath}/admin/deleteUser/${user.id}" method="POST">
                                                                 <button class="btn btn-danger  dim" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"/><i>Delete</i></button>
                                                                 </form:form>
                                                             </small>
