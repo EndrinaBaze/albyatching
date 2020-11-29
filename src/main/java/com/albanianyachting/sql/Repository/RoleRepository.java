@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
-    @Query(value = "SELECT r FROM Role r WHERE r.id = :id")
-    Role findOne(@Param("id") Long id);
+//@Repository
+public interface RoleRepository {//extends JpaRepository<Role, Long> {
+   // @Query(value = "SELECT r FROM Role r WHERE r.id = :id")
+    //Role findOne(@Param("id") Long id);
 }

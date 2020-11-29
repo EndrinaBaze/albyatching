@@ -3,38 +3,39 @@ package com.albanianyachting.sql;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Proxy;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 //@NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Proxy(lazy = false)
-public class Users implements Serializable {
-    private static final long serialVersionUID = 1L;
+@Where(clause = "status is null or status=true")
+public class Users extends Auditable<String>{
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "ID", unique = true, nullable = false)
     private Long id;
-    @Column(name = "name", nullable = false)
-    private String name;
-    @Column(name = "lastname", nullable = false)
-    private String lastname;
-    @Column(name = "email", nullable = false)
-    private String email;
-    @Column(name = "username", nullable = false)
-    private String username;
-    @Column(name = "password", nullable = false)
-    private String password;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
 
-    public Users() {
-    }
+    @Size(min = 4, max = 255, message = "Minimum username length: 4 characters")
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Size(min = 8, message = "Minimum password length: 8 characters")
+    private String password;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    List<Role> roles;
 
     public Long getId() {
         return id;
@@ -42,30 +43,6 @@ public class Users implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getUsername() {
@@ -76,6 +53,14 @@ public class Users implements Serializable {
         this.username = username;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -84,11 +69,12 @@ public class Users implements Serializable {
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
+
 }
