@@ -16,7 +16,7 @@
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link href="${contextPath}/resources/controlpanel/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/controlpanel/font-awesome/css/font-awesome.css " rel="stylesheet">
     <link href="${contextPath}/resources/controlpanel/css/animate.css" rel="stylesheet">
@@ -42,11 +42,11 @@
                     <form:input type="text" id="email" class="form-control" placeholder="E-mail" required="" path="email"/>
                 </div>
             <div class="form-group">
-                <select id="role" class="form-control custom-select"  path="role">
+                <form:select id="roles" class="form-control custom-select"  path="roles">
                     <option>Select Role</option>
-                    <option>ROLE_ADMIN</option>
-                    <option>ROLE_CLIENT</option>
-                </select>
+                    <option value="ROLE_ADMIN">ADMIN</option>
+                    <option value="ROLE_CLIENT">CLIENT</option>
+                </form:select>
             </div>
             <button type="submit" id="register-button" class="btn btn-success block full-width m-b">Register</button>
         </form:form>

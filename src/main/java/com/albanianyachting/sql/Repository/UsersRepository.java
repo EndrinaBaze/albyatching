@@ -19,6 +19,9 @@ public interface UsersRepository extends SoftDeleteRepository<Users, Long> {
 
     boolean existsByUsername(String username);
 
+    boolean existsByUsernameAndIdIsNot(String username,Long id);
+
+
     Users findByUsername(String username);
 
     @Transactional

@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: 'post',
             data: $(this).serialize(),
             success: function (token) {
-                console.log(token);
+               // console.log(token);
                 localStorage.setItem('access_token', token);
                 //  window.location.href='http://localhost:8080/admin';
                 $.ajax({
@@ -41,10 +41,9 @@ $(document).ready(function () {
         usersDTO["password"] = $("#password").val();
         usersDTO["email"] = $("#email").val();
         var roles = [];
-        roles.push($("#role option:selected").text())
-
-        console.log(usersDTO);
+        roles.push($("#roles option:selected").val())
         usersDTO["roles"] = roles;
+        console.log('registered user ', usersDTO);
 
         $.ajax({
             url: '/api/users/signup',
@@ -53,10 +52,11 @@ $(document).ready(function () {
                 "Content-type": "application/json"
             },
             data: JSON.stringify(usersDTO),
-            success: function () {
+            success: function (data) {
                 alert('success');
             },
-            error: function () {
+            error: function (data) {
+                console.log(data);
                 alert('error');
             }
         })

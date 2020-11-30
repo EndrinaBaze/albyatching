@@ -129,7 +129,7 @@
                                     </button>
                                     <c:choose>
                                         <c:when test="${not empty usersDTO.id}">
-                                            <button id="updateUsers"  class="btn btn-primary btn-sm"
+                                        <button id="updateUsers"  class="btn btn-primary btn-sm"
                                                     type="submit">Update
                                             </button>
                                         </c:when>
@@ -141,7 +141,9 @@
                                     </c:choose>
                                 </div>
                             </div>
-                            <%--                    <form:hidden path="idprop"/>--%>
+<%--                            <c:when test="${not empty usersDTO.id}">--%>
+                           <form:hidden id="idUser" value="${usersDTO.id}" path="id"/>
+<%--                            </c:when>--%>
                         </form:form>
 
 

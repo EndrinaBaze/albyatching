@@ -8,7 +8,7 @@ $(document).ready(function () {
         usersDTO["password"] = $("#password").val();
         usersDTO["email"] = $("#email").val();
         var roles = [];
-        roles.push($("#roles option:selected").text())
+        roles.push($("#roles option:selected").val())
 
         console.log(usersDTO);
         usersDTO["roles"] = roles;
@@ -37,6 +37,7 @@ $(document).ready(function () {
         usersDTO["username"] = $("#username").val();
         usersDTO["password"] = $("#password").val();
         usersDTO["email"] = $("#email").val();
+        usersDTO["id"]=$("#idUser").val();
         var roles = [];
         roles.push($("#roles option:selected").val())
 
@@ -51,11 +52,11 @@ $(document).ready(function () {
                 "Authorization": "Bearer " + localStorage.getItem('access_token')
             },
             data: JSON.stringify(usersDTO),
-            success: function (usersCreatedDTO) {
-                console.log(usersCreatedDTO);
+            success: function (usersDTOupdated) {
+                console.log(usersDTOupdated);
             },
-            error: function () {
-                console.log('error');
+            error: function (error) {
+                console.log('error',error);
             }
         })
     });

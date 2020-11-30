@@ -73,7 +73,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     public Users updateUserFromAdmin(Users user) {
-        if (!userRepository.existsByUsername(user.getUsername())) {
+        if (!userRepository.existsByUsernameAndIdIsNot(user.getUsername(),user.getId())) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);
         } else {
